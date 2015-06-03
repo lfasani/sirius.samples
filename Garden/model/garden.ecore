@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="garden" nsURI="http://www.example.org/garden" nsPrefix="garden">
+  <eClassifiers xsi:type="ecore:EClass" name="Zone" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="zones" upperBound="-1"
+        eType="#//Zone" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trees" upperBound="-1"
+        eType="#//Tree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pathways" upperBound="-1"
+        eType="#//PathWay" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maintainedBy" upperBound="-1"
+        eType="#//Gardener"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Gardener"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Garden" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="zones" upperBound="-1"
+        eType="#//Zone" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tree" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="leafType" lowerBound="1"
+        eType="#//LeafType" defaultValueLiteral="DECIDIOUS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PathWay" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gardener" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GardenerGroup" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subGroups" upperBound="-1"
+        eType="#//GardenerGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gardeners" upperBound="-1"
+        eType="#//Gardener" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LeafType">
+    <eLiterals name="DECIDIOUS" literal="DECIDIOUS"/>
+    <eLiterals name="EVERGREEN" value="1" literal="EVERGREEN"/>
+  </eClassifiers>
+</ecore:EPackage>

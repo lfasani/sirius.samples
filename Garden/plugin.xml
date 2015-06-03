@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated garden -->
+      <package
+            uri="http://www.example.org/garden"
+            class="garden.GardenPackage"
+            genModel="model/garden.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated garden -->
+      <parser
+            type="garden"
+            class="garden.util.GardenResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated garden -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="garden.presentation.GardenModelWizardID"
+            name="%_UI_GardenModelWizard_label"
+            class="garden.presentation.GardenModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GardenModelFile.gif">
+         <description>%_UI_GardenModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated garden -->
+      <editor
+            id="garden.presentation.GardenEditorID"
+            name="%_UI_GardenEditor_label"
+            icon="icons/full/obj16/GardenModelFile.gif"
+            extensions="garden"
+            class="garden.presentation.GardenEditor"
+            contributorClass="garden.presentation.GardenActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
